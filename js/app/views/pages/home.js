@@ -7,56 +7,52 @@ define([
   'ratchet',
   'swipe'
 
-], function ($, _, Backbone, headerTemplate,slidesjs,Swipe ) {
+  ], function ($, _, Backbone, headerTemplate,slidesjs,Swipe ) {
     var Header = Backbone.View.extend({
-        events: {
-        },
+      events: {
+      },
 
-        el: $('#appMiddle'),
+      el: $('#appMiddle'),
 
-        render: function () {
-            var compiledTemplate = _.template(headerTemplate);
-            this.$el.html(compiledTemplate);
-			
-			setTimeout(function(){
-				$('#mySlider').slidesjs({
-					width: 380,
-					height: 800,
-					play: {
-					  active: true,
-					  effect: "slide",
-					  interval: 5000,
-					  auto: true,
-					  swap: false,
-					  pauseOnHover: false,
-					  restartDelay: 2500
-					},
-					pagination:false,
-					navigation:false
-				})
-				
-				
-				$('#appMiddle').swipe({
-					swipeLeft:function(event, direction, distance, duration, fingerCount) {
-						console.log('left');
-					},
-					swipeRight:function(event, direction, distance, duration, fingerCount) {
-						console.log('right');
-					},
-				})
-			},0)
-        },
+      render: function () {
+        var compiledTemplate = _.template(headerTemplate);
+        this.$el.html(compiledTemplate);
 
-        initialize: function () {
-            
-        },
+        setTimeout(function(){
+          $('#mySlider').slidesjs({
+            width: 380,
+            height: 800,
+            play: {
+              active: true,
+              effect: "slide",
+              interval: 5000,
+              auto: true,
+              swap: false,
+              pauseOnHover: false,
+              restartDelay: 2500
+            },
+            pagination:false,
+            navigation:false
+          })
 
-        close: function () {
-            this.remove();
-            this.unbind();
-        },
+
+          $('#appMiddle').swipe({
+            swipeLeft:function(event, direction, distance, duration, fingerCount) {},
+            swipeRight:function(event, direction, distance, duration, fingerCount) {},
+          })
+        },0)
+      },
+
+      initialize: function () {
+
+      },
+
+      close: function () {
+        this.remove();
+        this.unbind();
+      },
 
     });
 
     return Header;
-});
+  });

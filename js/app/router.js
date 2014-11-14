@@ -4,12 +4,12 @@ define([
   'backbone'
 ],
 
-    function ($, _, Backbone, Login, Home, Add, About, Recommendation) {
+    function ($, _, Backbone) {
         var Router = Backbone.Router.extend({
             routes: {
                 '': 'home',
             },
-            
+
             AppView:function(view){
                 if (this.currentView){
                     this.currentView.close();
@@ -20,17 +20,17 @@ define([
             },
 
             initialize: function () {
+                var Header = require(['views/static/header'], function (Header) {var header = new Header();header.render();}),
+                    Footer = require(['views/static/footer'], function (Footer) {var footer = new Footer(); footer.render();});
 
-                var Header = require(['views/static/header'], function (Header) {
-                    var header = new Header();
-                    header.render();
-                })
+                    //Get user from local
 
-                var Footer = require(['views/static/footer'], function (Footer) {
-                    var footer = new Footer();
-                    footer.render();
-                })
-				
+                    // if not
+
+                    // call login
+
+
+
             },
 
             home: function () {
