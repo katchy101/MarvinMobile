@@ -1,16 +1,18 @@
 require.config({
   baseUrl: "js/app",
   paths: {
-    templates: "./content/templates",
-    jquery: "./lib/jquery-1.11.1.min",
-    underscore: "./lib/underscore",
-    backbone: "./lib/backbone",
-    backbonelocalstorage: "./lib/backbone.localStorage",
-    text: "./lib/text",
-    slider: "./lib/jquery.slides",
-    ratchet: "./lib/ratchet",
+    templates     : "./content/templates",
+    images        : "./content/Images",
+    jquery        : "./lib/jquery-1.11.1.min",
+    underscore    : "./lib/underscore",
+    backbone      : "./lib/backbone",
+    backbonelocalstorage  : "./lib/backbone.localStorage",
+    text          : "./lib/text",
+    slider        : "./lib/jquery.slides",
+    ratchet     : "./lib/ratchet",
     swipe:"./lib/jquery.touchSwipe",
-    DB:"./lib/DB"
+    DB:"./lib/DB",
+    collagePlus:'./lib/jquery.collagePlus'
   },
   shim: {
     "underscore": {
@@ -34,6 +36,11 @@ require.config({
     'DB' :{
       deps:['jquery'],
       exports:'DB'
+    },
+    'collagePlus' : {
+      deps:['jquery'],
+      exports: 'collagePlus'
+
     }
   }
 
@@ -41,5 +48,6 @@ require.config({
 require([
   "app"
   ], function(App){
+  //  document.addEventListener("deviceready",   App.initialize, false);
     App.initialize();
   });

@@ -69,8 +69,8 @@
       $('#lbUsers').html('');
 
       // this next section will select all the content from the User tableand then go through it row by row
-      // appending the UserId  FirstName  LastName to the  #lbUsers element
-      on the page
+      // appending the UserId  FirstName  LastName to the  #lbUsers element on the page
+
       db.transaction(function(transaction) {
         transaction.executeSql('SELECT * FROM User;', [],
         function(transaction, result) {
@@ -88,8 +88,7 @@
 
     }
 
-    // this is the function that puts values into the database using the
-    values from the text boxes on the screen
+    // this is the function that puts values into the database using the values from the text boxes on the screen
     function AddValueToDB() {
 
       if (!window.openDatabase) {

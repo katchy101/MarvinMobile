@@ -38,7 +38,7 @@ var DB = {
                   console.log(response.status);
               },
               error:function(response){
-                  //Show Pop up 
+                  //Show Pop up
               }
             });
 

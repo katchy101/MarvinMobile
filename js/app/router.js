@@ -7,7 +7,7 @@ define([
     function ($, _, Backbone) {
         var Router = Backbone.Router.extend({
             routes: {
-                '': 'home',
+                '': 'boot',
             },
 
             AppView:function(view){
@@ -20,8 +20,8 @@ define([
             },
 
             initialize: function () {
-                var Header = require(['views/static/header'], function (Header) {var header = new Header();header.render();}),
-                    Footer = require(['views/static/footer'], function (Footer) {var footer = new Footer(); footer.render();});
+            //    var Header = require(['views/static/header'], function (Header) {var header = new Header();header.render();}),
+            //        Footer = require(['views/static/footer'], function (Footer) {var footer = new Footer(); footer.render();});
 
                     //Get user from local
 
@@ -31,6 +31,13 @@ define([
 
 
 
+            },
+            boot: function () {
+                var that = this;
+                var Home = require(['views/pages/boot'], function (Home) {
+                    var home = new Home();
+                    that.AppView(home);
+                });
             },
 
             home: function () {

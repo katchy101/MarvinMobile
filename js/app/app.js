@@ -9,7 +9,7 @@ define([
 ],
   function ($, _, Backbone, Router, DB) {
       var initialize = function () {
-        
+
           // AJAX Pre-Filter
           $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
             if (options.url.indexOf("hellomarvin") === -1) {
@@ -18,11 +18,8 @@ define([
           });
 
 
-          // Create on Ready Event
-          document.addEventListener("deviceready", DB.onDeviceReady, false);
-
-          //var router = new Router();
-          //Backbone.history.start();
+          var router = new Router();
+          Backbone.history.start();
       }
 
 

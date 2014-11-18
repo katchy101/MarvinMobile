@@ -8,7 +8,7 @@ define([
   'swipe'
 
   ], function ($, _, Backbone, headerTemplate,slidesjs,Swipe ) {
-    var Header = Backbone.View.extend({
+    var Home = Backbone.View.extend({
       events: {
       },
 
@@ -54,5 +54,5 @@ define([
 
     });
 
-    return Header;
+    return Home;
   });
