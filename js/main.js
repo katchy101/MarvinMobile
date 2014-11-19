@@ -12,7 +12,9 @@ require.config({
     ratchet     : "./lib/ratchet",
     swipe:"./lib/jquery.touchSwipe",
     DB:"./lib/DB",
-    collagePlus:'./lib/jquery.collagePlus'
+    collagePlus:'./lib/jquery.collagePlus',
+    removeWhitespace: './lib/jquery.removeWhitespace.min',
+    jqueryPicture: './lib/jquery-picture'
   },
   shim: {
     "underscore": {
@@ -27,7 +29,7 @@ require.config({
       exports:"slidesjs"
     },
     "ratchet":{
-      deps:['jquery']
+      deps:['jquery'],
     },
     "swipe" :{
       deps:['jquery'],
@@ -37,10 +39,17 @@ require.config({
       deps:['jquery'],
       exports:'DB'
     },
+    'jqueryPicture':{
+      deps:['jquery'],
+      exports: 'picture'
+    },
+    'removeWhitespace' :{
+      deps:['jquery'],
+      exports: 'removeWhitespace'
+    },
     'collagePlus' : {
       deps:['jquery'],
       exports: 'collagePlus'
-
     }
   }
 
