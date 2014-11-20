@@ -42,32 +42,32 @@ define([
 
         //Loading Screen
         //Phase 1 :
-        // setTimeout(function(){
-        //   $('.login_area').fadeOut(function(){
-        //     $('.logo_holder img').animate({
-        //       width:'21%',
-        //       height:'12%',
-        //     });
-        //     $('.loader_cover').animate({
-        //       width:'48%'
-        //     })
-        //   });
-        // },1000)
+         setTimeout(function(){
+           $('.login_area').fadeOut(function(){
+             $('.logo_holder img').animate({
+               width:'21%',
+               height:'12%',
+             });
+             $('.loader_cover').animate({
+               width:'48%'
+             })
+           });
+         },1000)
         //
         // //Phase 2 :
-        // setTimeout(function(){
-        //      $('.loader_cover').animate({
-        //        width:'0%'
-        //      });
-        //      $('.logo_holder img').animate({
-        //        left:'0px'
-        //      });
-        // },2000)
+         setTimeout(function(){
+              $('.loader_cover').animate({
+                width:'0%'
+              });
+              $('.logo_holder img').animate({
+                left:'0px'
+              });
+         },2000)
 
         //Phase 3 :
-        // setTimeout(function(){
-        //   $('.Collage').fadeOut();
-        // },5500)
+         setTimeout(function(){
+           $('.Collage').fadeOut();
+         },5500)
       },
 
       close: function () {
