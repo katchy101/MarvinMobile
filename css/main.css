@@ -5,6 +5,11 @@ div.bar{
 	z-index:35
 }
 
+#appWrap{
+	width:100%;
+	height:100%;
+}
+
 /* BOOTSCREEN  */
 
 /*Collage PLus*/
