@@ -8,8 +8,9 @@ define([
   'swipe',
   'collagePlus',
   'removeWhitespace',
-  'jqueryPicture'
-  ], function ($, _, Backbone, bootTemplate,slidesjs,Swipe,collagePlus,removeWhitespace,picture) {
+  'jqueryPicture',
+  'transit'
+  ], function ($, _, Backbone, bootTemplate,slidesjs,Swipe,collagePlus,removeWhitespace,picture,transition) {
     var Boot = Backbone.View.extend({
       events: {
       },
@@ -22,18 +23,26 @@ define([
         this.$el.html(compiledTemplate);
         $('.Collage').removeWhitespace().collagePlus();
 
-        $('.loader_cover').fadeIn(function(){
-          $('.login_area').fadeIn();
+        $('.loader_cover').transition({
+            opacity:100
+        },function(){
+          $('.login_area').transition({
+            opacity:100
+          });
         });
 
         setInterval(function(){
           $('.Collage img').each(function(index,value){
             var randomTag = Math.floor(Math.random() * 8) + 1
             if(index == randomTag){
-              $(value).fadeOut(300, function(){
-                var randomImage = Math.floor(Math.random() * 35) + 1
-                $(this).attr('src','js/app/content/images/People/'+randomImage+'.jpg').bind('onreadystatechange load', function(){
-                  if (this.complete) $(this).fadeIn(300);
+              $(value).transition({
+                opacity:0
+              }, function(){
+                  var randomImage = Math.floor(Math.random() * 35) + 1
+                  $(this).attr('src','js/app/content/images/People/'+randomImage+'.jpg').bind('onreadystatechange load', function(){
+                  if (this.complete) $(this).transition({
+                    opacity:100
+                  });
                 });
               });
             }
@@ -44,11 +53,11 @@ define([
         //Phase 1 :
          setTimeout(function(){
            $('.login_area').fadeOut(function(){
-             $('.logo_holder img').animate({
+             $('.logo_holder img').transition({
                width:'21%',
                height:'12%',
              });
-             $('.loader_cover').animate({
+             $('.loader_cover').transition({
                width:'48%'
              })
            });
@@ -56,17 +65,19 @@ define([
         //
         // //Phase 2 :
          setTimeout(function(){
-              $('.loader_cover').animate({
+              $('.loader_cover').transition({
                 width:'0%'
               });
-              $('.logo_holder img').animate({
+              $('.logo_holder img').transition({
                 left:'0px'
               });
          },2000)
 
         //Phase 3 :
          setTimeout(function(){
-           $('.Collage').fadeOut();
+           $('.Collage').transition({
+             opacity: 0
+           });
          },5500)
       },
 

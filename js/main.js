@@ -14,7 +14,8 @@ require.config({
     DB:"./lib/DB",
     collagePlus:'./lib/jquery.collagePlus',
     removeWhitespace: './lib/jquery.removeWhitespace.min',
-    jqueryPicture: './lib/jquery-picture'
+    jqueryPicture: './lib/jquery-picture',
+    transit : './lib/transit'
   },
   shim: {
     "underscore": {
@@ -50,6 +51,10 @@ require.config({
     'collagePlus' : {
       deps:['jquery'],
       exports: 'collagePlus'
+    },
+    'transit' :{
+      deps:['jquery'],
+      exports: 'transition'
     }
   }
 
