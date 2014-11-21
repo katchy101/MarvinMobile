@@ -15,7 +15,8 @@ require.config({
     collagePlus:'./lib/jquery.collagePlus',
     removeWhitespace: './lib/jquery.removeWhitespace.min',
     jqueryPicture: './lib/jquery-picture',
-    transit : './lib/transit'
+    transit : './lib/transit',
+    marvin_ajax:'./lib/marvin_ajax'
   },
   shim: {
     "underscore": {
@@ -55,6 +56,9 @@ require.config({
     'transit' :{
       deps:['jquery'],
       exports: 'transition'
+    },
+    'marvin_ajax': {
+      deps:['jquery']
     }
   }
 

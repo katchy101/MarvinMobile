@@ -18,12 +18,16 @@ div.bar{
 
 /*Collage PLus*/
 .Collage{
-	opacity:0;
+
 	z-index:1;
 	padding:15px;
 
 }
 
+.Collage.wrap{
+	width:25px;
+	height:25px;
+}
 .Collage img{
 	vertical-align:bottom;
 	opacity:0;
@@ -60,7 +64,7 @@ div.bar{
 	left:60px;
 }
 
-.login_area .block label{
+.login_area label{
 	display: inline-block;
 	width:50px;
 	text-align:right;

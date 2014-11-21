@@ -9,16 +9,19 @@ define([
   'collagePlus',
   'removeWhitespace',
   'jqueryPicture',
-  'transit'
+  'transit',
+  'marvin_ajax'
   ], function ($, _, Backbone, bootTemplate,slidesjs,Swipe,collagePlus,removeWhitespace,picture,transition) {
     var Boot = Backbone.View.extend({
       events: {
+        'click #loginSubmit' : 'login'
       },
 
       el: $('#appMiddle'),
-
+      test:function(){
+        alert('hello');
+      },
       render: function () {
-
         var compiledTemplate = _.template(bootTemplate);
         this.$el.html(compiledTemplate);
         $('.Collage').removeWhitespace().collagePlus();
@@ -51,38 +54,46 @@ define([
 
         //Loading Screen
         //Phase 1 :
-         setTimeout(function(){
-           $('.login_area').fadeOut(function(){
-             $('.logo_holder img').transition({
-               width:'21%',
-               height:'12%',
-             });
-             $('.loader_cover').transition({
-               width:'48%'
-             },function(){
-               $('.Collage').transition({
-                 opacity : 100
-               })
-             })
-           });
-         },1000)
+        //  setTimeout(function(){
+        //    $('.login_area').fadeOut(function(){
+        //      $('.logo_holder img').transition({
+        //        width:'21%',
+        //        height:'12%',
+        //      });
+        //      $('.loader_cover').transition({
+        //        width:'48%'
+        //      },function(){
+        //        $('.Collage').transition({
+        //          opacity : 100
+        //        })
+        //      })
+        //    });
+        //  },1000)
         //
         // //Phase 2 :
-         setTimeout(function(){
-              $('.loader_cover').transition({
-                width:'0%'
-              });
-              $('.logo_holder img').transition({
-                left:'0px'
-              });
-         },2000)
+        //  setTimeout(function(){
+        //       $('.loader_cover').transition({
+        //         width:'0%'
+        //       });
+        //       $('.logo_holder img').transition({
+        //         left:'0px'
+        //       });
+        //  },2000)
 
         //Phase 3 :
-         setTimeout(function(){
-           $('.Collage').transition({
-             opacity: 0
-           });
-         },5500)
+        //  setTimeout(function(){
+        //    $('.Collage').transition({
+        //      opacity: 0
+        //    });
+        //  },5500)
+      },
+
+      login:function(){
+        var username = $('#username').val(),
+            password = $('#password').val(),
+            self = this;
+
+        Marvin_Ajax.login(username,password);
       },
 
       close: function () {
