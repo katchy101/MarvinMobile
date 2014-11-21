@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html>
-	<head>
+<head>
 
-		<meta charset="utf-8">
-		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<link href="css/ratchet.css" rel="stylesheet">
-		<link href="css/swipe.css" rel="stylesheet">
-		<link href="css/main.css" rel="stylesheet">
-		<link href="css/transitions.css" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta id="testViewport" name="viewport" content="width = 380">
+	<script>
+	if (screen.width > 740) {
+		var mvp = document.getElementById('testViewport');
+		mvp.setAttribute('content','width=740');
+	}
+	</script>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link href="css/ratchet.css" rel="stylesheet">
+	<link href="css/swipe.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/transitions.css" rel="stylesheet">
 
-		<script data-main="js/main" src="js/app/lib/require.js"></script>
-    	</head>
-	<body>
-		<div id="appWrap">
-			<div id="appHeader">
+	<script data-main="js/main" src="js/app/lib/require.js"></script>
+</head>
+<body>
+	<div id="appWrap">
+		<div id="appHeader">
 
-			</div>
-			<div id="appLeft">
-
-			</div>
-			<div id="appMiddle">
-
-			</div>
-			<div id="appRight">
-
-			</div>
-			<div id="appFooter">
-
-			</div>
 		</div>
-	</body>
-	  <script src="cordova.js"></script>
-		<script src="phonegap.js"></script>
+		<div id="appLeft">
+
+		</div>
+		<div id="appMiddle">
+
+		</div>
+		<div id="appRight">
+
+		</div>
+		<div id="appFooter">
+
+		</div>
+	</div>
+</body>
+<script src="cordova.js"></script>
+<script src="phonegap.js"></script>
 </html>

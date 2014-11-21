@@ -59,6 +59,10 @@ define([
              });
              $('.loader_cover').transition({
                width:'48%'
+             },function(){
+               $('.Collage').transition({
+                 opacity : 100
+               })
              })
            });
          },1000)

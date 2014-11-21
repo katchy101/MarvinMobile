@@ -1,19 +1,24 @@
 #appHeader{
 	z-index:40
 }
+
+#appWrap{
+
+	width:100%;
+	height:100%;
+}
+
 div.bar{
 	z-index:35
 }
 
-#appWrap{
-	width:100%;
-	height:100%;
-}
+
 
 /* BOOTSCREEN  */
 
 /*Collage PLus*/
 .Collage{
+	opacity:0;
 	z-index:1;
 	padding:15px;
 
